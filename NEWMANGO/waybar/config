@@ -1,0 +1,78 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 12,
+
+  "modules-left": [
+    "custom/hostname",
+    "custom/sep",
+    "network",
+    "memory",
+    "cpu"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "temperature",
+    "disk",
+    "pulseaudio",
+    "tray"
+  ],
+
+  "clock": {
+    "interval": 1,
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true
+  },
+
+  "memory": {
+    "format": " {used} / {total} GiB",
+    "tooltip": true
+  },
+
+  "temperature": {
+    "format": " {temperatureC}°C",
+    "critical-threshold": 80
+  },
+
+  "disk": {
+    "format": " {used}/{total}",
+    "path": "/"
+  },
+
+  "network": {
+    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-ethernet": " {ipaddr}",
+    "format-disconnected": " Offline"
+  },
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": " Muted"
+  },
+
+  "custom/hostname": {
+    "exec": "hostname -s",
+    "interval": 600,
+    "format": " {}"
+  },
+
+  "custom/sep": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
+  }
+}
